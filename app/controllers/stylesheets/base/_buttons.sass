@@ -1,0 +1,90 @@
+
+$ink--size: 300px
+
+.button
+  +transition(all 0.05s ease-in-out)
+  font:
+    family: $sans-serif
+    weight: bold
+  text-decoration: none
+  overflow: hidden
+  padding: 0.5rem 1.5rem
+  position: relative
+  display: inline-block
+  border-radius: 2pt
+  background-color: rgba($color--white, 0.3)
+
+  &.m-blue
+    color: $color--white
+    background-color: $color--blue
+
+    &:visited, &:active
+      color: $color--white
+
+    &:hover
+      background-color: darken($color--blue, 5%)
+
+    &:active
+      background-color: darken($color--blue, 8%)
+
+    .button--ink
+      animation:
+        name: ink-drop
+        duration: 0.75s
+      background-color: adjust-hue($color--blue, -5deg)
+
+  &.m-white
+    color: $color--white
+    background-color: $color--white
+
+    &:visited, &:active
+      color: $color--blue
+
+    &:hover
+      background-color: darken($color--white, 5%)
+
+    &:active
+      background-color: darken($color--white, 8%)
+
+    .button--ink
+      animation:
+        name: ink-drop
+        duration: 0.75s
+      background-color: adjust-hue($color--blue, -15deg)
+
+  &--ink-container
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    width: $ink--size
+    height: $ink--size
+    pointer-events: none
+
+  &--ink
+    border-radius: 100%
+
+
+// Ink effect
++keyframes(ink-drop)
+  0%
+    width: 1px
+    height: 1px
+    opacity: 1
+
+  100%
+    width: $ink--size
+    height: $ink--size
+    opacity: 0
+
+// Blue
+// +ink-animation(ink-drop)
+//   0%
+//     width: 1px
+//     height: 1px
+//     opacity: 1
+
+//   100%
+//     width: $ink--size
+//     height: $ink--size
+//     opacity: 0

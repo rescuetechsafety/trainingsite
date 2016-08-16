@@ -1,0 +1,30 @@
+
+.course-partial
+  @extend %card
+  margin:
+    top: 1rem
+    bottom: 1rem
+
+  &--title-bar
+    display: flex
+    align-items: center
+    padding: 0
+
+  &--title
+    +transition(background-color 0.1s ease-in-out)
+    padding: 1rem
+    font-weight: bold
+    flex-grow: 1
+    border-right: 2px solid $color--off-white
+
+    &:hover
+      background-color: $color--off-white
+
+  &--expand
+    +transition(color 0.1s ease-in-out)
+    color: $color--light-gray
+    cursor: pointer
+    padding: 1rem
+
+    &:hover
+      color: $color--gray

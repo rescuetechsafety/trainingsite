@@ -1,0 +1,46 @@
+.icon--arrow-circle-down:before,
+.icon--arrow-circle-left:before,
+.icon--arrow-circle-right:before,
+.icon--arrow-circle-up:before,
+.icon--arrow-down:before,
+.icon--arrow-left:before,
+.icon--arrow-right:before,
+.icon--arrow-up:before,
+.icon--industry-general:before,
+.icon--industry-maritime:before,
+.icon--industry-medical:before,
+.icon--industry-oil:before,
+.icon--industry-telecommunications:before,
+.icon--industry-transmission:before,
+.icon--industry-utilities:before,
+.icon--industry-wind:before {
+  display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon--arrow-circle-down:before { content: "\f258"; }
+.icon--arrow-circle-left:before { content: "\f259"; }
+.icon--arrow-circle-right:before { content: "\f25a"; }
+.icon--arrow-circle-up:before { content: "\f25b"; }
+.icon--arrow-down:before { content: "\f107"; }
+.icon--arrow-left:before { content: "\f10c"; }
+.icon--arrow-right:before { content: "\f119"; }
+.icon--arrow-up:before { content: "\f122"; }
+.icon--industry-general:before { content: "\f250"; }
+.icon--industry-maritime:before { content: "\f251"; }
+.icon--industry-medical:before { content: "\f257"; }
+.icon--industry-oil:before { content: "\f252"; }
+.icon--industry-telecommunications:before { content: "\f253"; }
+.icon--industry-transmission:before { content: "\f254"; }
+.icon--industry-utilities:before { content: "\f255"; }
+.icon--industry-wind:before { content: "\f256"; }

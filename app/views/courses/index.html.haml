@@ -1,0 +1,4 @@
+
+.container
+  - @pages.each do |page, data|
+    = render :partial => "partials/course", :locals => {:course_path => "#{data['basename'].gsub('-', '_')}_path", :metadata => data["metadata"]}

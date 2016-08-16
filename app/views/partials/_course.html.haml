@@ -1,0 +1,6 @@
+
+.course-partial
+  .course-partial--title-bar
+    = link_to send(course_path), :class => "course-partial--title" do
+      = metadata["title"]
+    .course-partial--expand.icon--arrow-circle-left

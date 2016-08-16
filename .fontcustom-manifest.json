@@ -1,0 +1,108 @@
+{
+  "checksum": {
+    "previous": "83d9573480785a6394a3413e41882dbf32f3c71445d13040c82ed108e3402e81",
+    "current": "83d9573480785a6394a3413e41882dbf32f3c71445d13040c82ed108e3402e81"
+  },
+  "fonts": [
+    "app/assets/fonts/icons/font/icons.ttf",
+    "app/assets/fonts/icons/font/icons.svg",
+    "app/assets/fonts/icons/font/icons.woff",
+    "app/assets/fonts/icons/font/icons.eot"
+  ],
+  "glyphs": {
+    "arrow-circle-down": {
+      "codepoint": 62040,
+      "source": "app/assets/fonts/icons/glyphs/arrow-circle-down.svg"
+    },
+    "arrow-circle-left": {
+      "codepoint": 62041,
+      "source": "app/assets/fonts/icons/glyphs/arrow-circle-left.svg"
+    },
+    "arrow-circle-right": {
+      "codepoint": 62042,
+      "source": "app/assets/fonts/icons/glyphs/arrow-circle-right.svg"
+    },
+    "arrow-circle-up": {
+      "codepoint": 62043,
+      "source": "app/assets/fonts/icons/glyphs/arrow-circle-up.svg"
+    },
+    "arrow-down": {
+      "codepoint": 61703,
+      "source": "app/assets/fonts/icons/glyphs/arrow-down.svg"
+    },
+    "arrow-left": {
+      "codepoint": 61708,
+      "source": "app/assets/fonts/icons/glyphs/arrow-left.svg"
+    },
+    "arrow-right": {
+      "codepoint": 61721,
+      "source": "app/assets/fonts/icons/glyphs/arrow-right.svg"
+    },
+    "arrow-up": {
+      "codepoint": 61730,
+      "source": "app/assets/fonts/icons/glyphs/arrow-up.svg"
+    },
+    "industry-general": {
+      "codepoint": 62032,
+      "source": "app/assets/fonts/icons/glyphs/industry-general.svg"
+    },
+    "industry-maritime": {
+      "codepoint": 62033,
+      "source": "app/assets/fonts/icons/glyphs/industry-maritime.svg"
+    },
+    "industry-medical": {
+      "codepoint": 62039,
+      "source": "app/assets/fonts/icons/glyphs/industry-medical.svg"
+    },
+    "industry-oil": {
+      "codepoint": 62034,
+      "source": "app/assets/fonts/icons/glyphs/industry-oil.svg"
+    },
+    "industry-telecommunications": {
+      "codepoint": 62035,
+      "source": "app/assets/fonts/icons/glyphs/industry-telecommunications.svg"
+    },
+    "industry-transmission": {
+      "codepoint": 62036,
+      "source": "app/assets/fonts/icons/glyphs/industry-transmission.svg"
+    },
+    "industry-utilities": {
+      "codepoint": 62037,
+      "source": "app/assets/fonts/icons/glyphs/industry-utilities.svg"
+    },
+    "industry-wind": {
+      "codepoint": 62038,
+      "source": "app/assets/fonts/icons/glyphs/industry-wind.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".icon--{{glyph}}",
+    "debug": true,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "icons",
+    "force": true,
+    "input": {
+      "templates": "app/assets/fonts/icons/templates",
+      "vectors": "app/assets/fonts/icons/glyphs"
+    },
+    "no_hash": true,
+    "output": {
+      "css": "app/assets/stylesheets/base",
+      "fonts": "app/assets/fonts/icons/font",
+      "preview": "app/assets/fonts/icons/font"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "_icons.scss"
+    ]
+  },
+  "templates": [
+    "app/assets/stylesheets/base/_icons.scss"
+  ]
+}

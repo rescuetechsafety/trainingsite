@@ -1,0 +1,50 @@
+
+.back-navigation
+  margin:
+    top: 0.5rem
+    bottom: 0.5rem
+
+  &:before
+    margin-right: 0.5rem
+    line-height: 1rem
+
+.course
+  display: flex
+
+  &--description
+    @extend %card
+    width: 100%
+
+  &--details
+    width: 300px
+    flex-shrink: 0
+    margin-left: 1rem
+
+  &--detail
+    @extend %card
+
+    + .course--detail
+      margin-top: 1rem
+
+    ul
+      list-style: none
+      padding-left: 0
+
+  &--detail-title
+    color: $color--gray
+
+.course-cta
+  @extend %card
+  background-color: $color--blue
+  color: $color--white
+  display: flex
+  align-items: center
+  margin:
+    bottom: 1rem
+    top: 1rem
+
+  &--copy
+    flex-grow: 1
+    margin: 0
+    font-weight: bold
+    text-align: center

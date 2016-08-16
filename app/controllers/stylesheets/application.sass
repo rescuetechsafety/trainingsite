@@ -1,0 +1,30 @@
+
+@import "base/config"
+@import "base/mixins"
+@import "base/fonts"
+@import "base/icons"
+@import "base/typography"
+@import "base/buttons"
+@import "base/layout"
+
+@import "partials/navigation"
+@import "partials/footer"
+@import "partials/course"
+
+@import "pages/index"
+@import "pages/course"
+
+*, *:before, *:after
+  box-sizing: inherit
+
+html
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+  background-color: $color--off-white
+
+.content
+  flex-grow: 2

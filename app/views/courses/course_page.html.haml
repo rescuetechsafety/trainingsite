@@ -1,0 +1,48 @@
+
+.container
+  = link_to courses_path, :class => "button m-blue back-navigation icon--arrow-left" do
+    Back to Courses
+
+.container.course
+  .course--description
+    %h1= @page["metadata"]["title"]
+
+    = render :html => @content
+
+  .course--details
+    - if @page["metadata"]["duration"]
+      .course--detail
+        %h3.course--detail-title Course Duration
+        = @page["metadata"]["duration"]
+
+    - if @page["metadata"]["requirements_met"]
+      .course--detail
+        %h3.course--detail-title Meets Requirements For
+        - @page["metadata"]["requirements_met"].each do |requirement|
+          %ul
+            - if requirement.is_a?(String)
+              %li= requirement
+            - else
+              - requirement.each do |key, value|
+                %li= key + " " + value.join(", ")
+
+    - if @page["metadata"]["prerequisites"]
+      .course--detail
+        %h3.course--detail-title Prerequisites
+        %ul
+          - @page["metadata"]["prerequisites"].each do |value|
+            %li= value.html_safe
+
+    - if @page["metadata"]["topics"]
+      .course--detail
+        %h3.course--detail-title Course Topics
+        %ul
+          - @page["metadata"]["topics"].each do |value|
+            %li= value
+
+.container
+  .course-cta
+    .course-cta--copy
+      This class can be taught at your location, or join us at an open-enrollment class.
+    = link_to "/", :class => "button m-white" do
+      Get a Quote!
