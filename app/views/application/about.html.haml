@@ -1,2 +1,45 @@
+\
+- content_for :title do
+  About the Company
+
 .container
-  %h1 Test
+  .about
+    -# Intro
+    -# 27 years in business
+    -# Core values of honesty, integrity and professionalism
+    -# Providing: Training, Education and Consulting Services
+
+    %h1 27 years of keeping people safe.
+    %p With years of experience training, educating, and consulting with businesses on the west coast and across the greater USA, Rescue Tech has built a reputation of honesty, integrity, and professionalism.
+
+    -# industries
+    -# Serving: construction, general industry, maritime, wind, telecom, gas  and electrical utility, solar
+    -# Professionals in multiple industries with credentials
+
+    -# Services
+    -# Onsite Safety Services
+    -# Offsite Safety Services
+    -# Program Development
+    -# Nationwide Services
+
+
+    -# closing
+    -# Best advertising is our clients'
+    %p We know that the best advertising is the referral of our clients to others, so we put our all into everything we do.
+
+
+  .contact
+    %h1 Contact Us
+    %h4 Email
+    =link_to "info@rescuetech.training", "mailto:info@rescuetech.training", :class => "button m-blue"
+
+    %h4 Phone
+    =link_to "(222) 3333-0000", "tel:+12223330000", :class => "button m-blue"
+
+    %h4 Social
+    = render "partials/social"
+
+    %h4 Mailing Address
+    %div Rescue Tech Health & Training Services
+    %div 3450 Palmer Dr. Suite 4-222
+    %div Cameron Park, CA 95682

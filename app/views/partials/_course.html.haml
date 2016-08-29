@@ -1,6 +1,11 @@
 
-.course-partial
+.course-partial(js-course)
   .course-partial--title-bar
     = link_to send(course_path), :class => "course-partial--title" do
       = metadata["title"]
-    .course-partial--expand.icon--arrow-circle-left
+    .course-partial--expand.icon--arrow-circle-left(js-expand title="Expand")
+
+  .course-partial--details(js-details)
+    %p.course-partial--description
+      = truncate content, :length => 300
+      = link_to "Learn more.", send(course_path)

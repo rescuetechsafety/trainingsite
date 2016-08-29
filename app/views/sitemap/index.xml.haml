@@ -1,0 +1,27 @@
+
+!!! XML
+%urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd")
+  %url
+    %loc #{@base_url}/
+    %priority 1.0
+    %lastmod 2016-08-24
+    %changefreq monthly
+
+  %url
+    %loc #{@base_url}/about
+    %priority 0.3
+    %lastmod 2016-08-24
+    %changefreq monthly
+
+  %url
+    %loc #{@base_url}/courses
+    %priority 0.5
+    %lastmod 2016-08-24
+    %changefreq monthly
+
+  - @pages.each do |course, page_data|
+    %url
+      %loc #{@base_url}/courses/#{course}
+      %priority 0.7
+      %lastmod= page_data["last_modified"] || "2016-08-24"
+      %changefreq monthly

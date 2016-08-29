@@ -1,4 +1,10 @@
 
+- content_for :title do
+  Course Offerings
+
+- content_for :description do
+  Find and discover the courses offered by Rescue Tech.
+
 .container
   - @pages.each do |page, data|
-    = render :partial => "partials/course", :locals => {:course_path => "#{data['basename'].gsub('-', '_')}_path", :metadata => data["metadata"]}
+    = render :partial => "partials/course", :locals => {:course_path => "#{data['basename'].gsub('-', '_')}_path", :metadata => data["metadata"], :content => strip_tags(data["content"])}

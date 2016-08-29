@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'application#index'
   get 'about' => 'application#about'
 
+  get 'sitemap' => 'sitemap#index'
+
   get 'courses' => 'courses#index'
   scope "/courses" do
     pages = CoursesHelper.get_pages

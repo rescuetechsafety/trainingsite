@@ -10,9 +10,11 @@
 @import "partials/navigation"
 @import "partials/footer"
 @import "partials/course"
+@import "partials/social"
 
 @import "pages/index"
 @import "pages/course"
+@import "pages/about"
 
 *, *:before, *:after
   box-sizing: inherit
@@ -27,4 +29,4 @@ body
   background-color: $color--off-white
 
 .content
-  flex-grow: 2
+  min-height: calc(100vh - #{$navigation--height} - 150px)

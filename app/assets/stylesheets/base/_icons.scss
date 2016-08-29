@@ -6,6 +6,8 @@
 .icon--arrow-left:before,
 .icon--arrow-right:before,
 .icon--arrow-up:before,
+.icon--facebook:before,
+.icon--industry-construction:before,
 .icon--industry-general:before,
 .icon--industry-maritime:before,
 .icon--industry-medical:before,
@@ -13,7 +15,9 @@
 .icon--industry-telecommunications:before,
 .icon--industry-transmission:before,
 .icon--industry-utilities:before,
-.icon--industry-wind:before {
+.icon--industry-wind:before,
+.icon--linkedin:before,
+.icon--twitter:before {
   display: inline-block;
   font-family: "icons";
   font-style: normal;
@@ -36,6 +40,8 @@
 .icon--arrow-left:before { content: "\f10c"; }
 .icon--arrow-right:before { content: "\f119"; }
 .icon--arrow-up:before { content: "\f122"; }
+.icon--facebook:before { content: "\f25d"; }
+.icon--industry-construction:before { content: "\f25c"; }
 .icon--industry-general:before { content: "\f250"; }
 .icon--industry-maritime:before { content: "\f251"; }
 .icon--industry-medical:before { content: "\f257"; }
@@ -44,3 +50,5 @@
 .icon--industry-transmission:before { content: "\f254"; }
 .icon--industry-utilities:before { content: "\f255"; }
 .icon--industry-wind:before { content: "\f256"; }
+.icon--linkedin:before { content: "\f25e"; }
+.icon--twitter:before { content: "\f25f"; }

@@ -1,0 +1,23 @@
+
+- title = "Rescue Tech - " + yield(:title).to_s
+- description = yield :description
+- canonical_url = yield :canonical_url
+
+= csrf_meta_tags
+
+%title= title
+%meta(name="description" content="#{ description }")
+%meta(charset="UTF-8")
+%meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
+%meta(name="apple-mobile-web-app-capable" content="yes")
+%meta(name="apple-mobile-web-app-status-bar-style" content="white")
+
+%link(href="#{ canonical_url }" rel="canonical")
+
+-# Open Graph
+%meta(property="og:title" content="TABLE")
+%meta(property="og:type" content="website")
+%meta(property="og:url" content="https://table.co")
+%meta(property="og:image" content="https://default-droprccorp.netdna-ssl.com/icons/app_icon.png")
+%meta(property="og:site_name" content="#{ title }")
+%meta(property="og:description" content="#{ description }")

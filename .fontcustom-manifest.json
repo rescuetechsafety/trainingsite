@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "83d9573480785a6394a3413e41882dbf32f3c71445d13040c82ed108e3402e81",
-    "current": "83d9573480785a6394a3413e41882dbf32f3c71445d13040c82ed108e3402e81"
+    "previous": "9735389a1553465410136256cf510c07cda515d0ada4ec3744b1ccf9e4f42766",
+    "current": "9735389a1553465410136256cf510c07cda515d0ada4ec3744b1ccf9e4f42766"
   },
   "fonts": [
     "app/assets/fonts/icons/font/icons.ttf",
@@ -42,6 +42,14 @@
       "codepoint": 61730,
       "source": "app/assets/fonts/icons/glyphs/arrow-up.svg"
     },
+    "facebook": {
+      "codepoint": 62045,
+      "source": "app/assets/fonts/icons/glyphs/facebook.svg"
+    },
+    "industry-construction": {
+      "codepoint": 62044,
+      "source": "app/assets/fonts/icons/glyphs/industry-construction.svg"
+    },
     "industry-general": {
       "codepoint": 62032,
       "source": "app/assets/fonts/icons/glyphs/industry-general.svg"
@@ -73,6 +81,14 @@
     "industry-wind": {
       "codepoint": 62038,
       "source": "app/assets/fonts/icons/glyphs/industry-wind.svg"
+    },
+    "linkedin": {
+      "codepoint": 62046,
+      "source": "app/assets/fonts/icons/glyphs/linkedin.svg"
+    },
+    "twitter": {
+      "codepoint": 62047,
+      "source": "app/assets/fonts/icons/glyphs/twitter.svg"
     }
   },
   "options": {

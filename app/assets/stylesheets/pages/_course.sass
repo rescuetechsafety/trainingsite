@@ -1,8 +1,6 @@
 
 .back-navigation
-  margin:
-    top: 0.5rem
-    bottom: 0.5rem
+  font-weight: bold
 
   &:before
     margin-right: 0.5rem
@@ -10,15 +8,38 @@
 
 .course
   display: flex
+  margin-top: 1rem
+
+  @media #{$device--small}
+    flex-direction: column
 
   &--description
     @extend %card
+    padding: 2rem
     width: 100%
+
+    @media #{$device--medium}
+      padding: 2rem 1rem
+
+    @media #{$device--small}
+      padding: 1rem
+
+  &--title
+    margin-top: 0.5em
 
   &--details
     width: 300px
     flex-shrink: 0
     margin-left: 1rem
+
+    @media #{$device--medium}
+      width: 250px
+
+    @media #{$device--small}
+      width: 100%
+      margin:
+        left: 0
+        top: 1rem
 
   &--detail
     @extend %card
@@ -43,8 +64,22 @@
     bottom: 1rem
     top: 1rem
 
+  @media #{$device--small}
+    display: block
+
   &--copy
     flex-grow: 1
     margin: 0
     font-weight: bold
     text-align: center
+
+    @media #{$device--small}
+      margin-bottom: 1rem
+
+  &--button
+    min-width: 150px
+    margin-left: 1rem
+
+    @media #{$device--small}
+      margin-left: 0
+      width: 100%

@@ -1,15 +1,35 @@
 
-.container
-  = link_to courses_path, :class => "button m-blue back-navigation icon--arrow-left" do
-    Back to Courses
+- content_for :title do
+  = @page["metadata"]["title"]
+
+- content_for :description do
+  = truncate strip_tags(@page["content"]), :length => 150
 
 .container.course
   .course--description
-    %h1= @page["metadata"]["title"]
+    = link_to courses_path, :class => "back-navigation icon--arrow-left" do
+      Back to Courses
+
+    %h1.course--title= @page["metadata"]["title"]
 
     = render :html => @content
 
+
   .course--details
+    - if @page["metadata"]["topics"]
+      .course--detail
+        %h3.course--detail-title Course Topics
+        %ul
+          - @page["metadata"]["topics"].each do |value|
+            %li= value
+
+    - if @page["metadata"]["prerequisites"]
+      .course--detail
+        %h3.5.course--detail-title Prerequisites
+        %ul
+          - @page["metadata"]["prerequisites"].each do |value|
+            %li= value.html_safe
+
     - if @page["metadata"]["duration"]
       .course--detail
         %h3.course--detail-title Course Duration
@@ -26,23 +46,11 @@
               - requirement.each do |key, value|
                 %li= key + " " + value.join(", ")
 
-    - if @page["metadata"]["prerequisites"]
-      .course--detail
-        %h3.course--detail-title Prerequisites
-        %ul
-          - @page["metadata"]["prerequisites"].each do |value|
-            %li= value.html_safe
 
-    - if @page["metadata"]["topics"]
-      .course--detail
-        %h3.course--detail-title Course Topics
-        %ul
-          - @page["metadata"]["topics"].each do |value|
-            %li= value
 
 .container
   .course-cta
     .course-cta--copy
       This class can be taught at your location, or join us at an open-enrollment class.
-    = link_to "/", :class => "button m-white" do
+    = link_to "/", :class => "button m-white course-cta--button" do
       Get a Quote!

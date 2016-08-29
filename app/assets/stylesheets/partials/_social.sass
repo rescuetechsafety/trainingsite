@@ -1,0 +1,40 @@
+
+.social
+  margin-top: 1rem
+  display: flex
+  justify-content: center
+
+  &--link
+    +transition(background-color 0.15s ease-in-out)
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 2rem
+    height: 2rem
+    font-size: 0.8rem
+    border-radius: 100%
+    color: $color--white
+
+    &:active, &:visited, &:hover
+      color: $color--white
+
+    &.m-facebook
+      background-color: #3B5998
+
+      &:hover
+        background-color: darken(#3B5998, 5%)
+
+    &.m-twitter
+      background-color: #55ACEE
+
+      &:hover
+        background-color: darken(#55ACEE, 8%)
+
+    &.m-linkedin
+      background-color: #007BB5
+
+      &:hover
+        background-color: darken(#007BB5, 4%)
+
+    + .social--link
+      margin-left: 1rem
