@@ -18,6 +18,14 @@
 /log/*
 !/log/.keep
 /tmp
+shared/log/*
 
 # Damn .DS_Store, the evilest of OSX dotfiles
 .DS_Store
+
+# Don't include Gemfile.lock since it is generated with 'bundle install'
+Gemfile.lock
+
+# Secrets
+config/initializers/secret_token.rb
+config/secrets.yml
