@@ -1,7 +1,5 @@
-
 .navigation.container
-  = link_to root_path do
-    = image_tag "logos/logo-new.svg", :class => "navigation--logo", :rel => "Rescue Tech Health and Safety Services"
+  = render "partials/logo"
 
-  %ul.navigation--links
-    %li= link_to "Courses", courses_path
+  .navigation--links
+    = link_to "Courses", courses_path, :class => "navigation--link #{request.env['PATH_INFO'] == courses_path ? "s-active" : ""}"

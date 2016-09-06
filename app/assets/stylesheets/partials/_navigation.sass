@@ -6,14 +6,45 @@
   justify-content: space-between
   background-color: $color--white
   position: relative
-  box-shadow: 0 1px 2px rgba($color--black, 0.3)
-
-  &--logo
-    height: calc(#{ $navigation--height } - 1rem)
+  box-shadow: 0 2px 4px rgba($color--black, 0.1)
 
   &--links
-    > li
-      display: inline
+    font:
+      weight: bold
+      size: $font-size--small
+    text-transform: uppercase
+    letter-spacing: 0.1em
 
-      + li
-        margin-left: 1rem
+  &--link
+    +transition(all 0.15s ease-in-out)
+    position: relative
+    display: flex
+    align-items: center
+    height: $navigation--height
+    padding: 0 $font-size--normal
+    border:
+      left: 1px solid $color--off-white
+      right: 1px solid $color--off-white
+    color: $color--dark-gray
+
+    &:visited
+      color: $color--gray
+
+    &:hover
+      background-color: $color--off-white
+
+    &.s-active
+      color: $color--gray
+
+      &:after
+        content: ""
+        width: $font-size--normal / 2
+        height: $font-size--normal / 2
+        border-radius: 100%
+        transform: rotate(45deg)
+        background-color: $color--blue
+        position: absolute
+        bottom: $font-size--normal / 2
+        left: 0
+        right: 0
+        margin: auto

@@ -1,22 +1,18 @@
 
 .footer
   background-color: $color--white
-  box-shadow: 0 1px 2px rgba($color--black, 0.3)
+  box-shadow: 0 2px 4px rgba($color--black, 0.1)
   padding:
-    top: 1rem
-    bottom: 2rem
-
-  &--links
-    text-align: center
-    font-size: 0.8rem
-
-    > a + a
-      margin-left: 1rem
+    top: $font-size--xlarge
+    bottom: $font-size--xlarge
 
   &--company-information
     text-align: center
-    margin-top: 1rem
+    margin-bottom: $font-size--normal
 
-  &--company-logo
-    margin-bottom: 1rem
-    height: calc(#{ $navigation--height } - 1.5rem)
+  &--links
+    text-align: center
+    font-size: $font-size--small
+
+    > a + a
+      margin-left: $font-size--normal

@@ -1,36 +1,21 @@
 
-.back-navigation
-  font-weight: bold
-
-  &:before
-    margin-right: 0.5rem
-    line-height: 1rem
-
 .course
   display: flex
-  margin-top: 1rem
+  margin-top: $font-size--normal
 
   @media #{$device--small}
     flex-direction: column
 
-  &--description
-    @extend %card
-    padding: 2rem
-    width: 100%
-
-    @media #{$device--medium}
-      padding: 2rem 1rem
-
-    @media #{$device--small}
-      padding: 1rem
-
-  &--title
-    margin-top: 0.5em
+  &--body
+    @extend .card
+    padding:
+      top: $font-size--normal
+      bottom: $font-size--normal
 
   &--details
     width: 300px
     flex-shrink: 0
-    margin-left: 1rem
+    margin-left: $font-size--normal
 
     @media #{$device--medium}
       width: 250px
@@ -39,30 +24,29 @@
       width: 100%
       margin:
         left: 0
-        top: 1rem
+        top: $font-size--normal
 
   &--detail
-    @extend %card
+    @extend .card
+    padding-top: $font-size--small
 
     + .course--detail
-      margin-top: 1rem
+      margin-top: $font-size--normal
 
-    ul
-      list-style: none
-      padding-left: 0
-
-  &--detail-title
-    color: $color--gray
+  &--detail-list
+    list-style: disc
+    margin-bottom: 0
+    padding-left: $font-size--large
 
 .course-cta
-  @extend %card
+  @extend .card
   background-color: $color--blue
   color: $color--white
   display: flex
   align-items: center
   margin:
-    bottom: 1rem
-    top: 1rem
+    bottom: $font-size--normal
+    top: $font-size--normal
 
   @media #{$device--small}
     display: block
@@ -74,11 +58,11 @@
     text-align: center
 
     @media #{$device--small}
-      margin-bottom: 1rem
+      margin-bottom: $font-size--normal
 
   &--button
     min-width: 150px
-    margin-left: 1rem
+    margin-left: $font-size--normal
 
     @media #{$device--small}
       margin-left: 0

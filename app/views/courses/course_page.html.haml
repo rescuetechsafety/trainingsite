@@ -7,45 +7,59 @@
 
 .container.course
   .course--description
-    = link_to courses_path, :class => "back-navigation icon--arrow-left" do
-      Back to Courses
-
-    %h1.course--title= @page["metadata"]["title"]
-
-    = render :html => @content
+    %h1.card= @page["metadata"]["title"]
+    .course--body= render :html => @content
 
 
   .course--details
     - if @page["metadata"]["topics"]
       .course--detail
-        %h3.course--detail-title Course Topics
-        %ul
-          - @page["metadata"]["topics"].each do |value|
-            %li= value
+        %label Course Topics
+        - if @page["metadata"]["prerequisites"].length > 1
+          %ul.course--detail-list
+            - @page["metadata"]["topics"].each do |topic|
+              %li= topic
+
+        - else
+          = @page["metadata"]["topics"][0]
 
     - if @page["metadata"]["prerequisites"]
       .course--detail
-        %h3.5.course--detail-title Prerequisites
-        %ul
-          - @page["metadata"]["prerequisites"].each do |value|
-            %li= value.html_safe
+        %label Prerequisites
+        - if @page["metadata"]["prerequisites"].length > 1
+          %ul.course--detail-list
+            - @page["metadata"]["prerequisites"].each do |value|
+              %li= value.html_safe
+
+        - else
+          = @page["metadata"]["prerequisites"][0].html_safe
+
 
     - if @page["metadata"]["duration"]
       .course--detail
-        %h3.course--detail-title Course Duration
+        %label Course Duration
         = @page["metadata"]["duration"]
+
 
     - if @page["metadata"]["requirements_met"]
       .course--detail
-        %h3.course--detail-title Meets Requirements For
-        - @page["metadata"]["requirements_met"].each do |requirement|
-          %ul
-            - if requirement.is_a?(String)
-              %li= requirement
-            - else
-              - requirement.each do |key, value|
-                %li= key + " " + value.join(", ")
+        %label Meets Requirements For
+        - if @page["metadata"]["requirements_met"].length > 1
+          - @page["metadata"]["requirements_met"].each do |requirement|
+            %ul.course--detail-list
+              - if requirement.is_a?(String)
+                %li= requirement
+              - else
+                - requirement.each do |key, value|
+                  %li= key + " " + value.join(", ")
 
+        - else
+          - requirement = @page["metadata"]["requirements_met"][0]
+          - if requirement.is_a?(String)
+            = requirement
+          - else
+            - requirement.each do |key, value|
+              = key + " " + value.join(", ")
 
 
 .container

@@ -2,62 +2,65 @@
 .splash
   display: flex
   align-items: center
-  min-height: calc(100vh - #{$navigation--height})
-  padding:
-    top: 8rem
-    bottom: 8rem
+  position: relative
+  height: 80vh
   background:
-    image: url("http://www.amerisure.com/getattachment/Our-Services/Loss-Control/Safety-Training/Safety-Training.jpg")
+    image: image-url("splash-edit.jpg")
     size: cover
     position: center
     color: $color--dark-gray
 
+  @media #{$device--small}
+    height: calc(100vh - #{$navigation--height} - 5rem)
+    padding:
+      top: 0
+      bottom: 0
+
+  &:after
+    content: ""
+    background-color: rgba(0, 0, 0, 0.6)
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
   &--copy
-    background-color: white
-    padding: 2rem
-    margin-right: 2rem
-    padding-left: 2rem
-    border-radius: 0 3pt 3pt 0
-    box-shadow: 0 1px 2px rgba($color--black, 0.3)
+    position: relative
+    z-index: 1
+    max-width: 800px
+    text-shadow: 1px 1px 1px rgba($color--black, 0.8)
+    color: $color--white
 
-    @media (min-width: 768px)
-      padding-left: calc( (100% - 750px) / 2 )
-      margin-right: calc( (100% - 750px) / 2 )
+  &--cta
+    margin-top: $font-size--large
+    text-shadow: none
 
-    @media (min-width: 992px)
-      padding-left: calc( (100% - 970px) / 2 )
-      margin-right: calc( (100% - 970px) / 2 )
+    @media #{$device--small}
+      width: 100%
 
-    @media (min-width: 1170px)
-      padding-left: calc( (100% - 1170px) / 2 )
-      margin-right: calc( (100% - 1170px) / 2 )
-
-    > h1
-      margin: 0
-      color: $color--dark-gray
-
-  &--cta > .icon--arrow-right
-    margin-left: 0.5rem
+    & > .icon--arrow-right
+      margin-left: $font-size--normal / 2
 
 .experience
   display: flex
   justify-content: space-between
   flex-wrap: wrap
   padding:
-    top: 3rem
-    bottom: 3rem
+    top: $font-size--xlarge
+    bottom: $font-size--xlarge
 
   &--item
     text-align: center
     max-width: 33%
     width: 100%
     margin:
-      top: 1rem
-      bottom: 1rem
+      top: $font-size--normal
+      bottom: $font-size--normal
 
   &--icon
+    font-size: $font-size--xlarge * 2
     color: $color--blue
-    font-size: 4rem
 
   &--label
     font-weight: bold

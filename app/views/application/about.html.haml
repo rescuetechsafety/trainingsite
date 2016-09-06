@@ -1,9 +1,9 @@
-\
+
 - content_for :title do
   About the Company
 
-.container
-  .about
+.container.about
+  .card
     -# Intro
     -# 27 years in business
     -# Core values of honesty, integrity and professionalism
@@ -29,17 +29,24 @@
 
 
   .contact
-    %h1 Contact Us
-    %h4 Email
-    =link_to "info@rescuetech.training", "mailto:info@rescuetech.training", :class => "button m-blue"
+    .contact--detail
+      %label Email
+      =link_to "info@rescuetech.training", "mailto:info@rescuetech.training", :class => "button m-blue m-wide"
 
-    %h4 Phone
-    =link_to "(222) 3333-0000", "tel:+12223330000", :class => "button m-blue"
+    .contact--detail
+      %label Phone
+      =link_to "(530) 417-6211", "tel:+15304176211", :class => "button m-blue m-wide"
 
-    %h4 Social
-    = render "partials/social"
+    .contact--detail
+      %label Social
+      = render "partials/social"
 
-    %h4 Mailing Address
-    %div Rescue Tech Health & Training Services
-    %div 3450 Palmer Dr. Suite 4-222
-    %div Cameron Park, CA 95682
+    .contact--detail
+      %label Mailing Address
+      %p
+        %b Rescue Tech Health & Training Services
+        %br
+        %br
+        %small 3450 Palmer Dr. Suite 4-222
+        %br
+        %small Cameron Park, CA 95682

@@ -8,37 +8,49 @@ html
     size: 16px
     family: $sans-serif
 
-  @media #{ $device--small }
-    font-size: 15px
-
 h1
-  font-size: 2rem
+  font-size: $font-size--xlarge
   position: relative
   line-height: 1.33em
   margin:
     top: 0
-    bottom: 1rem
+    bottom: $font-size--normal
 
-  @media #{ $device--small }
-    font-size: 2rem
+  + p
+    margin-top: $font-size--normal
 
 h2
-  font-size: 1.5rem
+  font-size: $font-size--large
 
-h3
+label
   font:
     weight: bold
-    size: 0.9rem
+    size: $font-size--small
   text-transform: uppercase
-  letter-spacing: 0.05em
-  margin-top: 0.2rem
+  letter-spacing: 0.08em
+  display: block
+  color: $color--gray
+  border-bottom: 1px solid $color--light-gray
+  margin-bottom: $font-size--normal
+  padding:
+    top: 0
+    bottom: 0.3rem
+
+small
+  font-size: $font-size--small
 
 p
   letter-spacing: 0.03em
-  line-height: 1.3em
+  line-height: $font-size--medium
+  margin:
+    top: $font-size--normal
+    bottom: $font-size--normal
   font:
     weight: normal
-    size: 1rem
+    size: $font-size--normal
+
+  &:first-child
+    margin-top: 0
 
 a
   color: $color--blue
@@ -47,8 +59,19 @@ a
   &:visited
     color: $color--blue
 
-  &:hover, &:active
+  &:hover,
+  &:active
     color: $color--dark-blue
+    background-color: transparent
+
+  &:focus
+    outline: none
+    border-radius: 3pt
+    box-shadow: 0 3px 5px rgba($color--blue, 0.1)
+
+    &:hover,
+    &:active
+      box-shadow: none
 
 li + li
   margin-top: 0.5rem
@@ -59,9 +82,9 @@ blockquote
   border: 1px solid $color--light-gray
   border-radius: 3px
   margin: 0
-  padding: 1rem
+  padding: $font-size--normal
 
 ul + h2,
 ol + h2,
 p + h2
-  margin-top: 2em
+  margin-top: $font-size--xlarge

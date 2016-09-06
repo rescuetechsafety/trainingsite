@@ -6,6 +6,6 @@
     .course-partial--expand.icon--arrow-circle-left(js-expand title="Expand")
 
   .course-partial--details(js-details)
-    %p.course-partial--description
-      = truncate content, :length => 300
-      = link_to "Learn more.", send(course_path)
+    .course-partial--inner-details
+      %p= truncate content, :length => 300
+      = link_to "Learn More", send(course_path), :class => "button m-blue course-partial--learn-more"

@@ -1,16 +1,29 @@
 
-.about, .contact
-  @extend %card
-  padding: 2rem
-  margin:
-    top: 1rem
-    bottom: 1rem
+.about
+  display: flex
+  margin-top: $font-size--normal
+
+  @media #{$device--small}
+    flex-direction: column
 
 .contact
-  text-align: center
+  width: 300px
+  flex-shrink: 0
+  margin-left: $font-size--normal
 
-  h1
-    text-align: left
+  @media #{$device--medium}
+    width: 250px
 
-  h4
-    margin-bottom: 0.5rem
+  @media #{$device--small}
+    width: 100%
+    margin:
+      left: 0
+      top: $font-size--normal
+      bottom: $font-size--normal
+
+  &--detail
+    @extend .card
+    text-align: center
+
+    + .contact--detail
+      margin-top: $font-size--normal

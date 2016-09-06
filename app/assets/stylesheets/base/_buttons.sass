@@ -10,11 +10,20 @@ $ink--size: 300px
     decoration: none
     align: center
   overflow: hidden
-  padding: 0.5rem 1.5rem
+  padding: ($font-size--medium / 2) $font-size--large
   position: relative
   display: inline-block
   border-radius: 2pt
   background-color: rgba($color--white, 0.3)
+
+  @media #{$device--small}
+    padding: $font-size--small $font-size--xlarge
+
+  &.m-wide
+    width: 100%
+    padding:
+      left: 0
+      right: 0
 
   &.m-blue
     color: $color--white
@@ -30,10 +39,10 @@ $ink--size: 300px
       background-color: darken($color--blue, 8%)
 
     .button--ink
+      background-color: adjust-hue($color--blue, -5deg)
       animation:
         name: ink-drop
         duration: 0.75s
-      background-color: adjust-hue($color--blue, -5deg)
 
   &.m-white
     color: $color--white
@@ -52,7 +61,7 @@ $ink--size: 300px
       animation:
         name: ink-drop
         duration: 0.75s
-      background-color: adjust-hue($color--blue, -15deg)
+      background-color: adjust-hue($color--blue, -25deg)
 
   &--ink-container
     position: absolute
@@ -78,15 +87,3 @@ $ink--size: 300px
     width: $ink--size
     height: $ink--size
     opacity: 0
-
-// Blue
-// +ink-animation(ink-drop)
-//   0%
-//     width: 1px
-//     height: 1px
-//     opacity: 1
-
-//   100%
-//     width: $ink--size
-//     height: $ink--size
-//     opacity: 0

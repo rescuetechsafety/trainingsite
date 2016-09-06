@@ -1,10 +1,9 @@
 
 .course-partial
-  @extend %card
+  @extend .card
   padding: 0
   margin:
-    top: 1rem
-    bottom: 1rem
+    top: $font-size--small
 
   &--title-bar
     display: flex
@@ -14,13 +13,13 @@
   &--title
     $title-color: $color--blue
     +transition(background-color 0.1s ease-in-out)
-    padding: 1rem
+    padding: $font-size--normal
     font-weight: bold
     color: $title-color
     flex-grow: 1
-    line-height: 1rem
+    line-height: $font-size--normal
 
-    &:hover
+    &:hover, &:active
       background-color: $color--off-white
 
     &:visited
@@ -30,13 +29,20 @@
     +transition(all 0.1s ease-in-out)
     color: $color--gray
     cursor: pointer
-    padding: 1rem
+    padding: 0 $font-size--normal
     display: flex
     align-items: center
     opacity: 0.5
+    min-height: 3rem
 
     &:hover
       opacity: 1
+
+    @media #{$device--small}
+      font-size: $font-size--large
+
+      &:hover
+        opacity: 0.5
 
     .s-expanded &
       transform: rotate(-90deg)
@@ -58,11 +64,16 @@
       @media #{$device--small}
         max-height: 300px
 
-  &--details-line
-    height: 1px
-    // background-color: $color--light-gray
+  &--inner-details
+    padding: $font-size--normal
+    text-align: right
 
-  &--description
-    margin:
-      left: 1rem
-      right: 1rem
+    > p
+      margin-top: 0
+      text-align: left
+
+  &--learn-more
+    margin-left: auto
+
+    @media #{$device--small}
+      width: 100%

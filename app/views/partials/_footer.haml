@@ -1,8 +1,7 @@
 
 .footer.container
   .footer--company-information
-    = link_to root_path do
-      = image_tag "logos/logo-new.svg", :class => "footer--company-logo", :rel => "Rescue Tech Health and Safety Services"
+    = render "partials/logo"
 
   .footer--links
     = link_to "Course Offerings", courses_path
