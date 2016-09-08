@@ -2,8 +2,10 @@
 .course-partial
   @extend .card
   padding: 0
-  margin:
-    top: $font-size--small
+  margin-top: $font-size--small
+
+  &:last-child
+    margin-bottom: $font-size--small
 
   &--title-bar
     display: flex
@@ -19,10 +21,13 @@
     flex-grow: 1
     line-height: $font-size--normal
 
-    &:hover, &:active
+    &:hover,
+    &:active
       background-color: $color--off-white
 
-    &:visited
+    &:visited,
+    &:hover,
+    &:active
       color: $title-color
 
   &--expand

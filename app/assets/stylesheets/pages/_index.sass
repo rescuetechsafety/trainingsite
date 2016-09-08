@@ -52,11 +52,16 @@
 
   &--item
     text-align: center
-    max-width: 33%
-    width: 100%
+    width: 33%
     margin:
       top: $font-size--normal
       bottom: $font-size--normal
+
+    @media #{$device--medium}
+      width: 50%
+
+    @media #{$device--small}
+      width: 100%
 
   &--icon
     font-size: $font-size--xlarge * 2
