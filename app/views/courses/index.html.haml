@@ -5,6 +5,9 @@
 - content_for :description do
   Find and discover the courses offered by Rescue Tech.
 
+- content_for :javascript do
+  = javascript_include_tag 'courses', 'data-turbolinks-track' => true
+
 .container
   - @pages.each do |page, data|
     = render :partial => "partials/course", :locals => {:course_path => "#{data['basename'].gsub('-', '_')}_path", :metadata => data["metadata"], :content => strip_tags(data["content"])}

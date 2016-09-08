@@ -5,9 +5,6 @@
 //= require analytics
 //= require_tree .
 
-$(document).ready(ready);
-$(document).on("page:load", ready);
-
 function ready() {
   $(".button").on("click", buttonHandler);
 }
@@ -30,3 +27,6 @@ function buttonHandler(e) {
     window.location = button[0].href;
   }, 300);
 }
+
+$(document).ready(ready);
+$(document).on("page:load", ready);
