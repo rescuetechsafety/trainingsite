@@ -5,6 +5,11 @@
 - content_for :description do
   = truncate strip_tags(@page["content"]), :length => 150
 
+- content_for :left_navigation do
+  = link_to courses_path, :class => "button m-subtle" do
+    %span.icon--arrow-left
+    Courses
+
 .container.course
   .course--description
     %h1.card= @page["metadata"]["title"]
