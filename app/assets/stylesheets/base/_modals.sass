@@ -1,0 +1,75 @@
+
+.modal
+  +transition(opacity 0.3s ease-in-out)
+  position: fixed
+  top: 0
+  bottom: 100%
+  left: 0
+  right: 0
+  background-color: rgba($color--gray, 0.2)
+  opacity: 0
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  display: none
+
+  &.s-active
+    opacity: 1
+
+  &--content
+    width: 100%
+    text-align: center
+
+  $modal-item--max: 400px
+  &--title,
+  &--item,
+  &--back
+    +transition(opacity 0.3s ease-out, transform 0.3s ease-out, background-color 0.8s ease-in-out,  color 0.8s ease-in-out)
+    transform: translateY($font-size--normal) scale(1.1)
+    opacity: 0
+    max-width: $modal-item--max
+    margin: auto
+
+    &.s-active
+      transform: translateY(0) scale(1)
+      opacity: 1
+
+    @media #{$device--landscape}
+      label
+        padding-bottom: 0
+        margin-bottom: $font-size--small
+        border: 0
+
+  &--title
+    @extend .card
+    color: $color--white
+    background-color: $color--blue
+
+    @media #{$device--landscape}
+      display: none
+
+      + .modal--item
+        margin-top: 0
+
+  &--item
+    @extend .card
+    text-align: left
+
+    + .modal--item
+      margin-top: 0.5rem
+
+  &--back.m-white
+    +box-shadow
+    margin-top: $font-size--normal
+    width: 100%
+    max-width: $modal-item--max
+    color: $color--red
+
+    &:hover, &:active
+      color: darken($color--red, 5%)
+
+    @media #{$device--landscape}
+      margin-top: $font-size--small
+
+    .button--ink
+      display: none

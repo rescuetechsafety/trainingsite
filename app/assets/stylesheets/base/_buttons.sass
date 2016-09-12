@@ -2,7 +2,8 @@
 $ink--size: 300px
 
 .button
-  +transition(all 0.05s ease-in-out)
+  @extend %no-select
+  +transition(all 0.08s ease-in-out)
   font:
     family: $sans-serif
     weight: bold
@@ -15,9 +16,10 @@ $ink--size: 300px
   display: inline-block
   border-radius: 2pt
   background-color: rgba($color--white, 0.3)
+  cursor: pointer
 
   @media #{$device--small}
-    padding: ($font-size--normal / 2) $font-size--medium
+    padding: ($font-size--large / 2) $font-size--medium
 
   &.m-wide
     width: 100%
@@ -45,6 +47,8 @@ $ink--size: 300px
         duration: 0.75s
 
   &.m-white
+    // TODO: Figure out why the .button transition is not being inherited
+    +transition(all 0.08s ease-in-out)
     color: $color--blue
     background-color: $color--white
 
@@ -55,7 +59,7 @@ $ink--size: 300px
       background-color: darken($color--white, 5%)
 
     &:active
-      background-color: darken($color--white, 8%)
+      background-color: darken($color--white, 10%)
 
     .button--ink
       animation:

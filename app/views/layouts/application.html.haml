@@ -9,9 +9,12 @@
 
     = render "partials/meta"
 
-  %body
-    = render "partials/navigation"
+  %body(ontouchstart="")
+    .wrapper
+      = render "partials/navigation"
 
-    .content= yield
+      .content= yield
 
-    = render "partials/footer"
+      = render "partials/footer"
+
+    = yield :modal

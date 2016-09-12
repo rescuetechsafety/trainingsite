@@ -34,6 +34,9 @@ gem 'turbolinks'
 # Turbolinks normally breaks jQuery apps. This fixes it.
 gem 'jquery-turbolinks'
 
+# Remove 300ms delay when clicking in a touch UI
+gem 'fastclick-rails'
+
 # Foreman for initializing app
 gem 'foreman'
 

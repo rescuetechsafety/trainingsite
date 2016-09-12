@@ -6,6 +6,7 @@
 @import "base/typography"
 @import "base/buttons"
 @import "base/layout"
+@import "base/modals"
 
 @import "partials/navigation"
 @import "partials/footer"
@@ -31,5 +32,16 @@ body
   overflow-x: hidden
   background-color: $color--off-white
 
+.wrapper
+  +transition(transform 0.3s ease-out, filter 0.3s ease-out)
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+  &.s-blurred
+    transform: scale(0.95)
+    filter: blur(25px)
+
 .content
-  min-height: calc(100vh - #{$navigation--height} - 150px)
+  flex-grow: 1
+  flex-shrink: 0

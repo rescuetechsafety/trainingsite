@@ -5,11 +5,25 @@
 - content_for :description do
   = truncate strip_tags(@page["content"]), :length => 150
 
-- content_for :left_navigation do
-  = link_to courses_path, :class => "button m-subtle" do
-    %span.icon--arrow-left
-    Courses
+-content_for :modal do
+  .modal(js-modal="contact")
+    .modal--content.container
+      %h2.modal--title Get In Touch!
+      .modal--item
+        %label Email
+        =link_to "info@rescuetech.training", "mailto:info@rescuetech.training", :class => "button m-blue m-wide"
+      
+      .modal--item
+        %label Phone
+        =link_to "(530) 417-6211", "tel:+15304176211", :class => "button m-blue m-wide"
+      
+      .modal--item
+        %label Social
+        = render "partials/social"
 
+      .button.m-white.modal--back(js-modal-toggle="contact") Cancel
+
+-# Body
 .container.course
   .course--description
     %h1.card= @page["metadata"]["title"]
@@ -71,5 +85,6 @@
   .course-cta
     .course-cta--copy
       This class can be taught at your location, or join us at an open-enrollment class.
-    = link_to "/about", :class => "button m-white course-cta--button" do
-      Get a Quote!
+
+    .button.m-white.course-cta--button(js-modal-toggle="contact") Get a Quote!
+      
