@@ -2,8 +2,10 @@
 %html
   %head
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    
+    %script(async src="https://www.google-analytics.com/analytics.js")
+
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = yield :javascript
 
     = render "partials/meta"
 

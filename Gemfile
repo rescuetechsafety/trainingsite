@@ -31,6 +31,9 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# Turbolinks normally breaks jQuery apps. This fixes it.
+gem 'jquery-turbolinks'
+
 # Foreman for initializing app
 gem 'foreman'
 

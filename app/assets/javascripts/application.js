@@ -1,32 +1,33 @@
 
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require analytics
 //= require_tree .
+//= require turbolinks
 
-function ready() {
-  $(".button").on("click", buttonHandler);
-}
+document.addEventListener("turbolinks:load", track);
 
-function buttonHandler(e) {
+$(document).on("click", ".button", function (e) {
   e.preventDefault();
 
-  var button = $(this);
-  var inkSize = 300;
-  var style = {
-    left: e.offsetX - inkSize / 2,
-    top: e.offsetY - inkSize / 2
-  };
-  var ink = $("<div class='button--ink-container'><div class='button--ink'></div></div>");
+  var button = $(this),
+      inkSize = 300;
 
-  ink.css(style);
-  button.append(ink);
+  button.append(
+    $("<div class='button--ink-container'><div class='button--ink'></div></div>")
+    .css({
+      left: e.offsetX - inkSize / 2,
+      top: e.offsetY - inkSize / 2
+    })
+  );
 
-  setTimeout(function() {
-    window.location = button[0].href;
+  setTimeout(function () {
+    Turbolinks.visit(button[0].href);
   }, 300);
-}
+});
 
-$(document).ready(ready);
-$(document).on("page:load", ready);
+function track () {
+  ga("set", "page", location.pathname);
+  ga("send", "pageview");
+}

@@ -1,12 +1,4 @@
 
-$(document).ready(coursesReady);
-$(document).on("page:load", coursesReady);
-
-var coursesReady = function() {
-  $("[js-course]").each(function() {
-    var course = $(this);
-    course.find("[js-expand]").on("click", function() {
-      course.toggleClass("s-expanded")
-    });
-  });
-};
+$(document).on("click", "[js-expand]", function () {
+  $(this).closest("[js-course]").toggleClass("s-expanded");
+});
